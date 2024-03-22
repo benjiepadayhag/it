@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ss.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Iloilo City</title>
+</head>
+<body>
+    
+    <header class="header">
+        <a class="navbar-brand" href="/">
+            <div class="logo-image">
+                  <img src="ph.png" class="img-fluid">
+            </div>
+      </a>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu'id="menu-icon"></i>
+            <i class='bx bx-x'id="close-icon"></i>
+        </label>
+
+        <nav class="navbar" data-aos="fade-down" data-aos-duration="800">
+            <a href="home.html" style="--i:0;" class="active">Home</a>
+            <a href="attractions.html" style="--i:1;">Attractions</a>
+            <a href="localc.html" style="--i:2;">Local Cuisine</a>
+            <a href="festivals.html" style="--i:3;">Festivals</a>
+            <a href="about.html" style="--i:4;">About Iloilo</a>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <div class="glass-wrapper" data-aos="fade-left" data-aos-delay="500" data-aos-duration="700"></div>
+    </div>
+    <div class="hero-title">
+        <p data-aos="fade-left" data-aos-delay="500" data-aos-duration="700">Discover</p>
+        <p class="city" data-aos="fade-left" data-aos-delay="600" data-aos-duration="700">Iloilo City</p>
+        <div class="details"
+        data-aos="fade-left" 
+        data-aos-delay="700" 
+        data-aos-duration="700">
+        Iloilo City is on Panay Island in the Philippines. It's known for its Spanish colonial churches and old houses.
+         On Jaro Plaza, Jaro Cathedral has a shrine to the local patron saint, Our Lady of the Candles. 
+         Nelly's Garden is an iconic 1920s mansion. Museo Iloilo explores local history. The Iloilo Esplanade is a pathway along the Iloilo River. 
+        </div>
+            <div class="explore" data-aos="fade-left" data-aos-delay="800" data-aos-duration="700">
+                <button>Explore</button>
+            </div>
+        <div class="tourist-list">
+            <ul class="place-list" >
+                <li class="active" data-img="bg3.jpg" data-aos="fade-down" data-aos-delay="600" data-aos-duration="700">
+                    <div class="thumbnail" >
+                        <div class="details">
+                            <p class="locality-name">Iloilo River Esplanade</p>
+                            
+                        </div>
+                    </div>
+                </li>
+                <li  data-img="1.jpg" data-aos="fade-down" data-aos-delay="750" data-aos-duration="700">
+                    <div class="thumbnail1">
+                        <div class="details">
+                            <p class="locality-name">Fort San Pedro</p>
+                        </div>
+                    </div>
+                </li>
+                <li  data-img="2.jpg" data-aos="fade-down" data-aos-delay="850" data-aos-duration="700">
+                    <div class="thumbnail2">
+                        <div class="details">
+                            <p class="locality-name">Nelly's Garden</p>
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<footer>Footer</footer>
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+    let places = document.querySelectorAll(".place-list li");
+    let active = "bg3.jpeg";
+
+    places.forEach((e) => {
+    e.addEventListener("mouseenter", (event) => {
+        places.forEach((e) => {
+            e.classList.remove("active");
+        });
+
+        event.target.classList.add("active");
+        active = event.target.getAttribute("data-img");
+        let banner = document.querySelector('body');
+        banner.style.backgroundImage = `url('${active}')`;
+    });
+});
+</script>   
